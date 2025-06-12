@@ -1,9 +1,8 @@
 // src/ARViewer.jsx
 import React, { useEffect, useRef } from "react";
-
+ // model-viewer 的 CDN 地址
 // 引入 model-viewer 的 JS（只需引入一次，可放在 public/index.html 里）
-const MODEL_VIEWER_SCRIPT =
-  "https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js";
+
 
 export default function ARViewer() {
   const videoRef = useRef(null);
@@ -12,13 +11,6 @@ export default function ARViewer() {
   let isLongPress = useRef(false);
 
   useEffect(() => {
-    // 动态加载 model-viewer 脚本
-    if (!window.customElements.get("model-viewer")) {
-      const script = document.createElement("script");
-      script.src = MODEL_VIEWER_SCRIPT;
-      script.type = "module";
-      document.head.appendChild(script);
-    }
 
     // 优先尝试后置摄像头
     navigator.mediaDevices
@@ -134,8 +126,6 @@ export default function ARViewer() {
           background: "transparent",
         }}
         camera-controls
-        ar
-        ar-modes="webxr scene-viewer quick-look"
         autoPlay
         shadow-intensity="1"
         interaction-prompt="none"
