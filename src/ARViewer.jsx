@@ -106,10 +106,6 @@ export default function ARViewer() {
           height: "100vh",
           objectFit: "cover",
           zIndex: 1,
-          WebkitUserSelect: "none",
-          userSelect: "none",
-          WebkitTouchCallout: "none",
-          WebkitTapHighlightColor: "transparent",
         }}
       />
       {/* 3D 模型 */}
@@ -126,6 +122,10 @@ export default function ARViewer() {
           height: "100vh",
           zIndex: 2,
           background: "transparent",
+          WebkitUserSelect: "none",
+          userSelect: "none",
+          WebkitTouchCallout: "none",
+          WebkitTapHighlightColor: "transparent",
         }}
         camera-controls
         autoPlay
