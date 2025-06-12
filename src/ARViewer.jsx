@@ -1,8 +1,7 @@
 // src/ARViewer.jsx
 import React, { useEffect, useRef } from "react";
- // model-viewer 的 CDN 地址
+// model-viewer 的 CDN 地址
 // 引入 model-viewer 的 JS（只需引入一次，可放在 public/index.html 里）
-
 
 export default function ARViewer() {
   const videoRef = useRef(null);
@@ -11,7 +10,6 @@ export default function ARViewer() {
   let isLongPress = useRef(false);
 
   useEffect(() => {
-
     // 优先尝试后置摄像头
     navigator.mediaDevices
       .getUserMedia({
@@ -108,6 +106,10 @@ export default function ARViewer() {
           height: "100vh",
           objectFit: "cover",
           zIndex: 1,
+          WebkitUserSelect: "none",
+          userSelect: "none",
+          WebkitTouchCallout: "none",
+          WebkitTapHighlightColor: "transparent",
         }}
       />
       {/* 3D 模型 */}
